@@ -174,7 +174,6 @@ def main():
     train_parser.add_argument('-s', '--sweeps', type=bool, default=False)  # to add bool simply add the flag with any text underneath
     train_parser.add_argument('-kt', '--keep-transform', type=bool, default=True, required=False)
     train_parser.add_argument('-kf', '--kfold', type=bool, default=False, required=False)
-
     train_parser.set_defaults(func=train)
 
     test_parser = action_parsers.add_parser('test')
