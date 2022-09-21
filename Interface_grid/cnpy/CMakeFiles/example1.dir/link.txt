@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -g CMakeFiles/example1.dir/example1.cpp.o -o example1  -Wl,-rpath,/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy libcnpy.so -lz 

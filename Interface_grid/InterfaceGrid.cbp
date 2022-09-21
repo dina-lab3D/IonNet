@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="InterfaceGrid"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cnpy\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\labs\;CMake Files\..\..\..\..\..\labs\dina\;CMake Files\..\..\..\..\..\labs\dina\dina\;CMake Files\..\..\..\..\..\labs\dina\dina\libs\;CMake Files\..\..\..\..\..\labs\dina\dina\libs\HighFive\;CMake Files\..\..\..\..\..\labs\dina\dina\libs\HighFive\_install\;CMake Files\..\..\..\..\..\labs\dina\dina\libs\HighFive\_install\share\;CMake Files\..\..\..\..\..\labs\dina\dina\libs\HighFive\_install\share\HighFive\;CMake Files\..\..\..\..\..\labs\dina\dina\libs\HighFive\_install\share\HighFive\CMake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="interface2grid">
+				<Option output="/cs/usr/punims/punims/MGClassifier/Interface_grid/interface2grid" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include"/>
+					<Add directory="/cs/labs/dina/punims/gamb"/>
+					<Add directory="/cs/labs/dina/punims/DockingLib"/>
+					<Add directory="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy"/>
+					<Add directory="/cs/labs/dina/dina/libs/HighFive"/>
+					<Add directory="/usr/include/hdf5/serial"/>
+					<Add directory="/cs/labs/dina/dina/libs/HighFive/_install/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 interface2grid"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="interface2grid/fast">
+				<Option output="/cs/usr/punims/punims/MGClassifier/Interface_grid/interface2grid" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include"/>
+					<Add directory="/cs/labs/dina/punims/gamb"/>
+					<Add directory="/cs/labs/dina/punims/DockingLib"/>
+					<Add directory="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy"/>
+					<Add directory="/cs/labs/dina/dina/libs/HighFive"/>
+					<Add directory="/usr/include/hdf5/serial"/>
+					<Add directory="/cs/labs/dina/dina/libs/HighFive/_install/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 interface2grid/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cnpy">
+				<Option output="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/libcnpy.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 cnpy"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cnpy/fast">
+				<Option output="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/libcnpy.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 cnpy/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="example1">
+				<Option output="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/example1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 example1"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="example1/fast">
+				<Option output="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/example1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 example1/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cnpy-static">
+				<Option output="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/libcnpy.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 cnpy-static"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cnpy-static/fast">
+				<Option output="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/libcnpy.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 cnpy-static/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/GraphInterface.cpp">
+			<Option target="interface2grid"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/GraphInterface.h">
+			<Option target="interface2grid"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/InterfaceGrid.cc">
+			<Option target="interface2grid"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/InterfaceGrid.h">
+			<Option target="interface2grid"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/MolecularInterface.cc">
+			<Option target="interface2grid"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/MolecularInterface.h">
+			<Option target="interface2grid"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/cnpy.cpp">
+			<Option target="cnpy"/>
+			<Option target="cnpy-static"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/cnpy.h">
+			<Option target="cnpy"/>
+			<Option target="cnpy-static"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/example1.cpp">
+			<Option target="example1"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/interface.cc">
+			<Option target="interface2grid"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cnpy\"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/../../../../../labs/dina/dina/libs/HighFive/_install/share/HighFive/CMake/HighFiveConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\labs\dina\dina\libs\HighFive\_install\share\HighFive\CMake\"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/../../../../../labs/dina/dina/libs/HighFive/_install/share/HighFive/CMake/HighFiveConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\labs\dina\dina\libs\HighFive\_install\share\HighFive\CMake\"/>
+		</Unit>
+		<Unit filename="/cs/usr/punims/punims/MGClassifier/Interface_grid/../../../../../labs/dina/dina/libs/HighFive/_install/share/HighFive/CMake/HighFiveTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\labs\dina\dina\libs\HighFive\_install\share\HighFive\CMake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
