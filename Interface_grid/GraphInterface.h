@@ -70,11 +70,11 @@ class GraphInterface {
         repr.write(dataRepresentation);
 
 
-        Attribute edges1 = dataset.createAttribute<float>(
+        Attribute edges1 = dataset.createAttribute<int>(
                 dataset_edge1_name, DataSpace::From(edge1));
         edges1.write(edge1);
 
-        Attribute edges2 = dataset.createAttribute<float>(
+        Attribute edges2 = dataset.createAttribute<int>(
                 dataset_edge2_name, DataSpace::From(edge2));
         edges2.write(edge2);
 
@@ -128,11 +128,11 @@ class GraphInterface {
               repr.write(graph.getDataRepresentation());
 
 
-              Attribute edges1 = dataset.createAttribute<float>(
+              Attribute edges1 = dataset.createAttribute<int>(
                       dataset_edge1_name, DataSpace::From(graph.getEdge1()));
               edges1.write(graph.getEdge1());
 
-              Attribute edges2 = dataset.createAttribute<float>(
+              Attribute edges2 = dataset.createAttribute<int>(
                       dataset_edge2_name, DataSpace::From(graph.getEdge2()));
               edges2.write(graph.getEdge2());
 

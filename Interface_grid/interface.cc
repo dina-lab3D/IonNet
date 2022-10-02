@@ -435,7 +435,7 @@ int main(int argc, char** argv)
     double radius = 8.0, cs = 1.0, vox_size = 1.0;
     int dimension = 3, max_clouds = 10, x = 32, y = 32, z = 32;
     std::string selector = "MG";
-    std::string input_dir = ".", input_text_file, output_dir, meta_path, atom_str, chem_lib_path = "/cs/usr/punims/Desktop/punims-dinaLab/MGClassifier/Interface_grid/chem.lib";
+    std::string input_dir = ".", input_text_file, output_dir, meta_path, atom_str, chem_lib_path = "chem.lib";
     po::options_description desc("Allowed options");
     desc.add_options()
             ("input-dir,i", po::value<std::string>(&input_dir)->default_value(input_dir),
