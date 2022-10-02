@@ -1,0 +1,3 @@
+/cs/labs/dina/punims/IonNet/Interface_grid/CMakeFiles/rebuild_cache.dir
+/cs/labs/dina/punims/IonNet/Interface_grid/CMakeFiles/interface2grid.dir
+/cs/labs/dina/punims/IonNet/Interface_grid/CMakeFiles/edit_cache.dir

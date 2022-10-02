@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/cnpy.h
+/cs/labs/dina/punims/IonNet/Interface_grid/cnpy/cnpy.h
 string
 -
 stdexcept
@@ -34,9 +34,9 @@ stdint.h
 numeric
 -
 
-/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/example1.cpp
+/cs/labs/dina/punims/IonNet/Interface_grid/cnpy/example1.cpp
 cnpy.h
-/cs/usr/punims/punims/MGClassifier/Interface_grid/cnpy/cnpy.h
+/cs/labs/dina/punims/IonNet/Interface_grid/cnpy/cnpy.h
 complex
 -
 cstdlib

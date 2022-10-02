@@ -156,7 +156,7 @@ void InterfaceGrid::outputGridNpy(const std::string file_name) {
     size_t N1 = data_.size();
     size_t M1 = data_[0].size();
     std::vector<float> raw1 = to1dim();
-    cnpy::npy_save(file_name, &raw1[0], {N1, M1}, "w");
+    //cnpy::npy_save(file_name, &raw1[0], {N1, M1}, "w");
 }
 
 bool InterfaceGrid::isDataPositive(long index) {

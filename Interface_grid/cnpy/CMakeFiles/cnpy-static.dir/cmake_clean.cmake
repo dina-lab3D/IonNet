@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cnpy-static.dir/cnpy.cpp.o"
-  "libcnpy.a"
   "libcnpy.pdb"
+  "libcnpy.a"
 )
 
 # Per-language clean rules from dependency scanning.

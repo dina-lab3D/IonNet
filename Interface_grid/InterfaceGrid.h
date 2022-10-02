@@ -19,7 +19,7 @@
 
 #include <HashInterface.h>
 
-#include "cnpy.h"
+//#include "cnpy.h"
 #include <string.h>
 
 #include <sys/stat.h>
