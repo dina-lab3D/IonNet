@@ -131,8 +131,8 @@ class PDBProcessor:
         :return: path of the PDB files which we created, original filename and extension
         """
 
-        SURFACE_PROG = "generatePDB"
-        WORK_DIR = "inference/pdb_processing/"
+        WORK_DIR = os.getcwd()+"/inference/pdb_processing/"
+        SURFACE_PROG = WORK_DIR+"/generatePDB"
         file_name, extension = os.path.splitext(os.path.basename(fpath))
         probe_path = odir + "/{}_probes{}".format(file_name, extension)
         rna_path = odir + f'/{file_name}_rna_{extension}'
@@ -160,11 +160,11 @@ class PDBProcessor:
         self.__create_output_folder(features_dir)
         self.__create_output_folder(feature_raw)
         self.__create_output_folder(os.path.join(features_dir, 'processed'))
-        interface_dir = "Interface_grid/"
+        interface_dir = os.getcwd()+"/Interface_grid/"
         file_name, extension = os.path.splitext(os.path.basename(combined_path))
         new_combined_path = features_dir + '/' + file_name + extension
         shutil.move(combined_path, new_combined_path)
-        INTERFACE2GRID = "interface2grid -i " + new_combined_path + " -o " + feature_raw + " --selector PB --voxel-size 1.0 -x 32 -y 32 -z 32 -r 8.0 --graph_representation --probe"
+        INTERFACE2GRID = interface_dir+"/interface2grid -i " + new_combined_path + " -o " + feature_raw + " --selector PB --voxel-size 1.0 -x 32 -y 32 -z 32 -r 8.0 --graph_representation --probe"
         print(f"Running command {INTERFACE2GRID}")
         subprocess.run(INTERFACE2GRID, shell=True, cwd=interface_dir)
         if add_mg:
