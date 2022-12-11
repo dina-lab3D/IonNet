@@ -1,1 +1,5 @@
 **/__pycache__
+/scoper_test
+/out
+/scripts/scoper_scripts
+/base_pair_statistics.out

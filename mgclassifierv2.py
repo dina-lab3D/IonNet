@@ -14,6 +14,7 @@ import wandb
 from preprocessing.kfold_creator import Kfold
 from preprocessing.preprocess_utils import create_random_sampler, evaluate_dataset
 from testing.test_utils import save_test_results
+from inference.scoper_pipeline import SCOPER
 
 
 
@@ -123,6 +124,29 @@ def inference(args):
         pipeline.cleanup()
 
 
+def scoper(args):
+    """
+    Runs full scoper pipeline
+    :param args:
+    :return:
+    """
+
+    fpath = args.file_path
+    base_dir = args.base_dir
+    saxs_path = args.saxs_path
+    saxs_script_path = args.foxs_script
+    kgs_k = args.kgs_k
+    inference_type = args.inference_type
+    model_path = args.model_path
+    config_path = args.config_path
+    multifoxs_script_path = args.multifoxs_script
+
+    scoper = SCOPER(fpath, saxs_path, base_dir, inference_type,
+                    model_path, config_path,
+                    saxs_script_path, multifoxs_script_path, kgs_k)
+    kwargs = scoper.run()
+
+
 def kfold_validation(args):
     """
     This function is responsible for creating k folds (files with names of pdbs in train and test)
@@ -201,6 +225,17 @@ def main():
     inference_parser.add_argument('-fs', '--foxs-script', type=str, required=True, default=False)
     inference_parser.add_argument('-mfs', '--multifoxs-script', type=str, required=True, default=False)
     inference_parser.set_defaults(func=inference)
+
+    scoper_parser = action_parsers.add_parser('scoper')
+    scoper_parser.add_argument('-fp', '--file-path', type=str,  required=True)
+    scoper_parser.add_argument('-sp', '--saxs-path', type=str,  required=True)
+    scoper_parser.add_argument('-mp', '--model-path', type=str, required=True)
+    scoper_parser.add_argument('-cp', '--config-path', type=str, required=False, default=None)
+    scoper_parser.add_argument('-it', '--inference-type', type=str, required=True)
+    scoper_parser.add_argument('-fs', '--foxs-script', type=str, required=True, default=False)
+    scoper_parser.add_argument('-mfs', '--multifoxs-script', type=str, required=True, default=False)
+    scoper_parser.add_argument('-kk', '--kgs-k', type=int, required=False, default=1)
+    scoper_parser.set_defaults(func=scoper)
 
     kfold_parser = action_parsers.add_parser('kfold')
     kfold_parser.add_argument('-k', '--number-of-folds', type=int, required=True, default=5)
