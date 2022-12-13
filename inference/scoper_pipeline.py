@@ -104,12 +104,12 @@ class KGSRNA:
         :return:
         """
         print("Adding hydrogens")
-        subprocess.run(f"{self.addhydrogens_script_path} {self.pdb_path}", shell=True, executable='/bin/csh', stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(f"{self.addhydrogens_script_path} {self.pdb_path}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         # set up environment variables for RNAVIEW (must already be installed)
         my_env = os.environ.copy()
         my_env["RNAVIEW"] = f"{os.getcwd()}/scripts/scoper_scripts/RNAVIEW/"
         print("Running rnaview on input pdb")
-        subprocess.run(f"{self.rnaview_path} {self.pdb_path}.HB", shell=True, executable='/bin/csh', env=my_env, stdout=subprocess.DEVNULL)
+        subprocess.run(f"{self.rnaview_path} {self.pdb_path}.HB", shell=True, env=my_env, stdout=subprocess.DEVNULL)
         self.__kgsrna_clean_pdb()
         if not os.path.isdir(self.kgsrna_work_dir):
             os.mkdir(self.kgsrna_work_dir)
@@ -141,7 +141,7 @@ class KGSRNA:
 
 
     def get_samples(self):
-        print("Running KGSRNA with 1000 samples")
+        print("Running KGSRNA with 1000 samples, this may take a few minutes")
         subprocess.run(self.kgsrna_script_path.format(self.pdb_path, self.pdb_path, self.pdb_workdir)
                        , shell=True, executable='/bin/csh', stdout=subprocess.DEVNULL)
 
