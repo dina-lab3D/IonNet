@@ -1,0 +1,38 @@
+argMap[hbondMethod] = rnaview
+argMap[hbondFile] = scoper_test/input/1l8vmono.pdb.HB.out
+argMap[workingDirectory] = scoper_test/KGSRNA/1l8vmono.pdb/
+Sampling options:
+	--initial scoper_test/input/1l8vmono.pdb.HB
+	--annotation 
+	--hbondMethod rnaview
+	--hbondFile scoper_test/input/1l8vmono.pdb.HB.out
+	--workingDirectory scoper_test/KGSRNA/1l8vmono.pdb/
+	--rigidbodiesFromFIRST false
+	--samples 1000
+	--radius 20
+	--collisionFactor 0.4
+	--decreaseSteps 0
+	--decreaseFactor 0.5
+	--maxRotation 0.174528
+	--rebuild90 0
+	--rebuild50 0
+	--rebuild10 0
+	--rebuildInitial 0
+	--rebuildAggression 0
+	--flexibleRibose 1
+	--seed 0
+ResidueAnnotations: 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110001111111111011110111111101111111111111111111111111111111111111100111110111111111111111011110001111011111011111110011111111111111110001111111111111111011001
+Molecule has:
+> 4106 atoms
+> 0 initial collisions
+> 36 hydrogen bonds
+> 1095 DOFs of which 896 are cycle-DOFs
+Sampling ...
+> New structure: newpdb_1.pdb .. RMSD to initial: 1.69 .. Null-space dimension: 716
+> New structure: newpdb_2.pdb .. RMSD to initial: 3.82 .. Null-space dimension: 716
+> New structure: newpdb_3.pdb .. RMSD to initial: 3.8 .. Null-space dimension: 716
+> New structure: newpdb_4.pdb .. RMSD to initial: 5.42 .. Null-space dimension: 716
+> New structure: newpdb_5.pdb .. RMSD to initial: 3.7 .. Null-space dimension: 716
+> New structure: newpdb_6.pdb .. RMSD to initial: 5.96 .. Null-space dimension: 716
+> New structure: newpdb_7.pdb .. RMSD to initial: 3.5 .. Null-space dimension: 716
+> New structure: newpdb_8.pdb .. RMSD to initial: 3.91 .. Null-space dimension: 716

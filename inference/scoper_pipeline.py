@@ -143,7 +143,7 @@ class KGSRNA:
     def get_samples(self):
         print("Running KGSRNA with 1000 samples, this may take a few minutes")
         subprocess.run(self.kgsrna_script_path.format(self.pdb_path, self.pdb_path, self.pdb_workdir)
-                       , shell=True, executable='/bin/csh', stdout=subprocess.DEVNULL)
+                       , shell=True, stdout=subprocess.DEVNULL)
 
 
     def calculate_foxs_scores(self):
