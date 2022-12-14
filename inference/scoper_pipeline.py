@@ -16,7 +16,7 @@ class SCOPER:
 
     def __init__(self, pdb_path: str, saxs_profile_path: str, base_dir: str, inference_type: str
                  , model_path: str, model_config_path: str, saxs_script_path: str, multifoxs_script_path: str,
-                 kgs_k:int=1):
+                 add_hydrogens_script_path: str, kgs_k:int=1):
         """
         constructor for scoper, sets all paths needed to run the pipeline
         :param pdb_path:
@@ -34,6 +34,7 @@ class SCOPER:
         self.__model_path = model_path
         self.__model_config_path = model_config_path
         self.__multifoxs_script_path = multifoxs_script_path
+        self.__add_hydrogens_script_path = add_hydrogens_script_path
 
     def run(self):
         """
@@ -48,7 +49,7 @@ class SCOPER:
         """
         
         top_k_pdbs, kgs_db = KGSRNA(self.__kgsrna_work_dir, self.pdb_path, self.kgs_k, self.__saxs_script_path,
-                            self.saxs_profile_path).compute()
+                            self.saxs_profile_path, self.__add_hydrogens_script_path).compute()
         print(top_k_pdbs)
         for pdb_file, _ in top_k_pdbs:  # already sorted
             inference_pipeline = InferencePipeline(os.path.join(os.getcwd(), self.__base_dir), os.path.join(os.getcwd(), os.path.join(os.getcwd(), os.path.join(kgs_db, pdb_file))), self.__inference_type,
@@ -62,16 +63,16 @@ class SCOPER:
 class KGSRNA:
     
     def __init__(self, kgsrna_work_dir: str, pdb_path: str, kgs_k: int, saxs_script_path: str,
-                 saxs_profile_path: str):
+                 saxs_profile_path: str, add_hydrogens_script_path: str):
         """
         Initialize kgsrna object
         :param kgsrna_work_dir: where kgsrna samples will be after preprocess
         :param kgsrna_script_path: kgsrna script to run to create samples
         """
         self.kgsrna_work_dir = kgsrna_work_dir
-        self.kgsrna_script_path = "~dina/software/KGSrna/KGSrna --initial {}.HB --hbondMethod rnaview --hbondFile {}.HB.out -s 1000 -r 20 -c 0.4 --workingDirectory {}/ > ! out "
+        self.kgsrna_script_path = "scripts/scoper_scripts/Software/Linux64/KGSrna/KGSrna --initial {}.HB --hbondMethod rnaview --hbondFile {}.HB.out -s 1000 -r 20 -c 0.4 --workingDirectory {}/ > ! out "
         self.pdb_path = pdb_path
-        self.addhydrogens_script_path = "~dina/scripts/addHydrogens.pl"  # install locally
+        self.addhydrogens_script_path = add_hydrogens_script_path  # install locally
         self.rnaview_path = "scripts/scoper_scripts/RNAVIEW/bin/rnaview"
         self.kgs_k = kgs_k
         self.saxs_script_path = saxs_script_path
@@ -104,12 +105,12 @@ class KGSRNA:
         :return:
         """
         print("Adding hydrogens")
-        subprocess.run(f"{self.addhydrogens_script_path} {self.pdb_path}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(f"{self.addhydrogens_script_path} {self.pdb_path}", shell=True)
         # set up environment variables for RNAVIEW (must already be installed)
         my_env = os.environ.copy()
         my_env["RNAVIEW"] = f"{os.getcwd()}/scripts/scoper_scripts/RNAVIEW/"
         print("Running rnaview on input pdb")
-        subprocess.run(f"{self.rnaview_path} {self.pdb_path}.HB", shell=True, env=my_env, stdout=subprocess.DEVNULL)
+        subprocess.run(f"{self.rnaview_path} {self.pdb_path}.HB", shell=True, env=my_env)
         self.__kgsrna_clean_pdb()
         if not os.path.isdir(self.kgsrna_work_dir):
             os.mkdir(self.kgsrna_work_dir)
@@ -153,7 +154,7 @@ class KGSRNA:
             if pdb_file.endswith(".pdb"):
                 sax_output = subprocess.run(
                     f"{self.saxs_script_path} {os.path.join(self.pdb_workdir_output, pdb_file)} {self.saxs_profile_path}",
-                    shell=True, capture_output=True, stdout=subprocess.DEVNULL)
+                    shell=True, capture_output=True)
                 sax_score = float(sax_output.stdout.split()[4])
                 saxs_scores[pdb_file] = sax_score
         clean_foxs_files(self.pdb_workdir_output)

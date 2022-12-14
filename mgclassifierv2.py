@@ -140,10 +140,11 @@ def scoper(args):
     model_path = args.model_path
     config_path = args.config_path
     multifoxs_script_path = args.multifoxs_script
+    addhydrogens_script_path = args.addhydrogens_script
 
     scoper = SCOPER(fpath, saxs_path, base_dir, inference_type,
                     model_path, config_path,
-                    saxs_script_path, multifoxs_script_path, kgs_k)
+                    saxs_script_path, multifoxs_script_path, addhydrogens_script_path, kgs_k)
     kwargs = scoper.run()
 
 
@@ -234,6 +235,7 @@ def main():
     scoper_parser.add_argument('-it', '--inference-type', type=str, required=True)
     scoper_parser.add_argument('-fs', '--foxs-script', type=str, required=True, default=False)
     scoper_parser.add_argument('-mfs', '--multifoxs-script', type=str, required=True, default=False)
+    scoper_parser.add_argument('-ahs', '--addhydrogens-script', type=str, required=True, default=False)
     scoper_parser.add_argument('-kk', '--kgs-k', type=int, required=False, default=1)
     scoper_parser.set_defaults(func=scoper)
 
