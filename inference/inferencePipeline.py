@@ -42,6 +42,14 @@ class InferencePipeline:
                 'mg_path': mg_path}
 
     def test(self, predicted_probe_path, mg_path, dcc_thresh=4, **kwargs):
+        """
+        runs testing over the predicted ions
+        :param predicted_probe_path:
+        :param mg_path:
+        :param dcc_thresh:
+        :param kwargs:
+        :return:
+        """
         test_metrics = TestMetrics(predicted_probe_path, mg_path, dcc_thresh, **kwargs)
         test_metrics.run_tests()
 
@@ -53,6 +61,11 @@ class InferencePipeline:
         self.processor.cleanup()
 
     def __load_predictions(self, dataset):
+        """
+        loads predictions if made before for ions
+        :param dataset:
+        :return:
+        """
         if not os.path.isfile(self.predictions_path) or self.overwrite:
             if self.overwrite:
                 print("predictions made but overwriting them")
@@ -534,9 +547,8 @@ class SAX:
         # run new script
         all_mg_files_string = " ".join([os.path.join(mg_folder_path, x) for x in os.listdir(mg_folder_path)])
         full_sax_combined_command = f'{self.SAX_SCRIPT_COMBINED} -s {len(os.listdir(mg_folder_path))} {self.sax_path} {self.rna_path} {all_mg_files_string}'
-        print(full_sax_combined_command)
+        print("Running MultiFoXS Combination, if optimized it may take a few minutes")
         sax_output = subprocess.run(full_sax_combined_command, shell=True, capture_output=True, cwd=sax_work_directory)
-        print(sax_output.stdout)
 
         # note that mg_paths are numbered according to the line in probe_fp
         score, mg_paths = self.__get_best_scoring_ensemble(sax_work_directory)

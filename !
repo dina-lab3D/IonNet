@@ -1,14 +1,14 @@
 argMap[hbondMethod] = rnaview
-argMap[hbondFile] = scoper_test/input/1l8vmono.pdb.HB.out
+argMap[hbondFile] = /cs/labs/dina/punims/IonNet/scoper_test/input/1l8vmono.pdb.HB.out
 argMap[workingDirectory] = scoper_test/KGSRNA/1l8vmono.pdb/
 Sampling options:
-	--initial scoper_test/input/1l8vmono.pdb.HB
+	--initial /cs/labs/dina/punims/IonNet/scoper_test/input/1l8vmono.pdb.HB
 	--annotation 
 	--hbondMethod rnaview
-	--hbondFile scoper_test/input/1l8vmono.pdb.HB.out
+	--hbondFile /cs/labs/dina/punims/IonNet/scoper_test/input/1l8vmono.pdb.HB.out
 	--workingDirectory scoper_test/KGSRNA/1l8vmono.pdb/
 	--rigidbodiesFromFIRST false
-	--samples 2
+	--samples 1
 	--radius 20
 	--collisionFactor 0.4
 	--decreaseSteps 0
@@ -29,7 +29,6 @@ Molecule has:
 > 1095 DOFs of which 896 are cycle-DOFs
 Sampling ...
 > New structure: newpdb_1.pdb .. RMSD to initial: 1.69 .. Null-space dimension: 716
-> New structure: newpdb_2.pdb .. RMSD to initial: 3.82 .. Null-space dimension: 716
-Took 2.78 seconds to generate 2 valid samples
-Jacobian and null space computation took 2.11 seconds
-Node selection took 0.24 seconds
+Took 1.57 seconds to generate 1 valid samples
+Jacobian and null space computation took 1.43 seconds
+Node selection took 0.0373 seconds
