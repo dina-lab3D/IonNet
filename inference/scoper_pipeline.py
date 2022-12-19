@@ -10,6 +10,7 @@ import os
 import subprocess
 from inference.inferencePipeline import InferencePipeline
 import shutil
+from inference.inference_utils import find_chi_score
 
 class SCOPER:
 
@@ -55,7 +56,7 @@ class SCOPER:
             inference_pipeline = InferencePipeline(os.path.join(os.getcwd(), self.__base_dir), os.path.join(os.getcwd(), os.path.join(os.getcwd(), os.path.join(kgs_db, pdb_file))), self.__inference_type,
                                                    self.__model_path, self.__model_config_path,
                                                    foxs_script=self.__saxs_script_path, multifoxs_script=self.__multifoxs_script_path)
-            # inference_pipeline.infer()
+            inference_pipeline.infer()
 
         
         
@@ -70,7 +71,7 @@ class KGSRNA:
         :param kgsrna_script_path: kgsrna script to run to create samples
         """
         self.kgsrna_work_dir = kgsrna_work_dir
-        self.kgsrna_script_path = "scripts/scoper_scripts/Software/Linux64/KGSrna/KGSrna --initial {}.HB --hbondMethod rnaview --hbondFile {}.HB.out -s 1000 -r 20 -c 0.4 --workingDirectory {}/ > ! out "
+        self.kgsrna_script_path = "scripts/scoper_scripts/Software/Linux64/KGSrna/KGSrna --initial {}.HB --hbondMethod rnaview --hbondFile {}.HB.out -s 2 -r 20 -c 0.4 --workingDirectory {}/ > ! out "
         self.pdb_path = pdb_path
         self.addhydrogens_script_path = add_hydrogens_script_path  # install locally
         self.rnaview_path = "scripts/scoper_scripts/RNAVIEW/bin/rnaview"
@@ -155,7 +156,7 @@ class KGSRNA:
                 sax_output = subprocess.run(
                     f"{self.saxs_script_path} {os.path.join(self.pdb_workdir_output, pdb_file)} {self.saxs_profile_path}",
                     shell=True, capture_output=True)
-                sax_score = float(sax_output.stdout.split()[4])
+                sax_score = find_chi_score(sax_output.stdout)
                 saxs_scores[pdb_file] = sax_score
         clean_foxs_files(self.pdb_workdir_output)
         print("Finished scoring")

@@ -432,7 +432,7 @@ class SAX:
             sax_labels = []
             combine_files(self.rna_path, self.mg_path, os.path.join(self.odir, "rna_with_original_mg.pdb"), self.odir)
             sax_output = subprocess.run(self.SAX_SCRIPT.format(os.path.join(self.odir, "rna_with_original_mg.pdb"), self.sax_path), shell=True, capture_output=True)
-            sax_score = float(sax_output.stdout.split()[4])
+            sax_score = find_chi_score(sax_output.stdout)
             print(f"the beginning score is {sax_score}")
             for i, label in enumerate(labels):
                 with open(os.path.join(self.odir, self.FIXED_FILE_NAME), "a") as fixed_file:
@@ -446,7 +446,7 @@ class SAX:
 
                 #score sax
                 sax_output = subprocess.run(self.SAX_SCRIPT.format(os.path.join(self.odir, f"RNA_with_{i}_MG.pdb"), self.sax_path), shell=True, capture_output=True)
-                sax_score = float(sax_output.stdout.split()[4])
+                sax_score = find_chi_score(sax_output.stdout)
                 print(f"the cur score is {sax_score}")
                 epsilon = 0.05
 
@@ -473,7 +473,7 @@ class SAX:
         final_product_name = "RNA_final.pdb"
         combine_files(self.rna_path, os.path.join(self.odir, "fixed_pdb.pdb"), final_product_name, self.odir)
         sax_output = subprocess.run(self.SAX_SCRIPT_VANILLA.format(os.path.join(self.odir, final_product_name), self.sax_path), shell=True, capture_output=True)
-        sax_score = float(sax_output.stdout.split()[4])
+        sax_score = find_chi_score(sax_output.stdout)
         print(f"the final score with fitting c1 and c2 is {sax_score}")
         return sax_labels
 

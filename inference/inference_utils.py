@@ -71,3 +71,15 @@ def fix_probe_lines(lines: [str]):
 
     return new_lines
 
+def find_chi_score(stdout):
+    """
+    When running foxs with the new IMP version it can have warnings.
+    This method simply finds the line where Chi^2 exists and returns the score
+    :return:
+    """
+    search_token = "Chi^2"
+    lines = str(stdout).split("\n")
+    for line in lines:
+        if search_token in line:
+            return float(line.split()[4])
+
