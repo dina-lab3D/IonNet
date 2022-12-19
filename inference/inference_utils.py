@@ -78,7 +78,9 @@ def find_chi_score(stdout):
     :return:
     """
     search_token = "Chi^2"
-    lines = str(stdout).split("\n")
+    split_token = "\\n" if "\\n" in str(stdout) else "\n"
+    # for colab
+    lines = str(stdout).split(split_token)
     for line in lines:
         if search_token in line:
             return float(line.split()[4])
