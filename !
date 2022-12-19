@@ -8,7 +8,7 @@ Sampling options:
 	--hbondFile /cs/labs/dina/punims/IonNet/scoper_test/input/1l8vmono.pdb.HB.out
 	--workingDirectory scoper_test/KGSRNA/1l8vmono.pdb/
 	--rigidbodiesFromFIRST false
-	--samples 1
+	--samples 30
 	--radius 20
 	--collisionFactor 0.4
 	--decreaseSteps 0
@@ -29,6 +29,35 @@ Molecule has:
 > 1095 DOFs of which 896 are cycle-DOFs
 Sampling ...
 > New structure: newpdb_1.pdb .. RMSD to initial: 1.69 .. Null-space dimension: 716
-Took 1.57 seconds to generate 1 valid samples
-Jacobian and null space computation took 1.43 seconds
-Node selection took 0.0373 seconds
+> New structure: newpdb_2.pdb .. RMSD to initial: 3.82 .. Null-space dimension: 716
+> New structure: newpdb_3.pdb .. RMSD to initial: 3.8 .. Null-space dimension: 716
+> New structure: newpdb_4.pdb .. RMSD to initial: 5.42 .. Null-space dimension: 716
+> New structure: newpdb_5.pdb .. RMSD to initial: 3.7 .. Null-space dimension: 716
+> New structure: newpdb_6.pdb .. RMSD to initial: 5.96 .. Null-space dimension: 716
+> New structure: newpdb_7.pdb .. RMSD to initial: 3.5 .. Null-space dimension: 716
+> New structure: newpdb_8.pdb .. RMSD to initial: 3.91 .. Null-space dimension: 716
+> New structure: newpdb_9.pdb .. RMSD to initial: 4.41 .. Null-space dimension: 716
+> New structure: newpdb_10.pdb .. RMSD to initial: 8.95 .. Null-space dimension: 716
+> New structure: newpdb_11.pdb .. RMSD to initial: 8.08 .. Null-space dimension: 716
+> New structure: newpdb_12.pdb .. RMSD to initial: 4.29 .. Null-space dimension: 716
+> New structure: newpdb_13.pdb .. RMSD to initial: 10.2 .. Null-space dimension: 716
+> New structure: newpdb_14.pdb .. RMSD to initial: 9.52 .. Null-space dimension: 716
+> New structure: newpdb_15.pdb .. RMSD to initial: 8.29 .. Null-space dimension: 716
+> New structure: newpdb_16.pdb .. RMSD to initial: 9.5 .. Null-space dimension: 716
+> New structure: newpdb_17.pdb .. RMSD to initial: 5.06 .. Null-space dimension: 716
+> New structure: newpdb_18.pdb .. RMSD to initial: 3.72 .. Null-space dimension: 716
+> New structure: newpdb_19.pdb .. RMSD to initial: 10.5 .. Null-space dimension: 716
+> New structure: newpdb_20.pdb .. RMSD to initial: 5.35 .. Null-space dimension: 716
+> New structure: newpdb_21.pdb .. RMSD to initial: 8.09 .. Null-space dimension: 716
+> New structure: newpdb_22.pdb .. RMSD to initial: 8.99 .. Null-space dimension: 716
+> New structure: newpdb_23.pdb .. RMSD to initial: 14.3 .. Null-space dimension: 716
+> New structure: newpdb_24.pdb .. RMSD to initial: 5.68 .. Null-space dimension: 716
+> New structure: newpdb_25.pdb .. RMSD to initial: 4.21 .. Null-space dimension: 716
+> New structure: newpdb_26.pdb .. RMSD to initial: 7.01 .. Null-space dimension: 716
+> New structure: newpdb_27.pdb .. RMSD to initial: 5.8 .. Null-space dimension: 716
+> New structure: newpdb_28.pdb .. RMSD to initial: 7.97 .. Null-space dimension: 716
+> New structure: newpdb_29.pdb .. RMSD to initial: 8.86 .. Null-space dimension: 716
+> New structure: newpdb_30.pdb .. RMSD to initial: 10.8 .. Null-space dimension: 716
+Took 30.3 seconds to generate 30 valid samples
+Jacobian and null space computation took 21.5 seconds
+Node selection took 3.83 seconds

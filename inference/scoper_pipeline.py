@@ -21,7 +21,7 @@ class SCOPER:
 
     def __init__(self, pdb_path: str, saxs_profile_path: str, base_dir: str, inference_type: str
                  , model_path: str, model_config_path: str, saxs_script_path: str, multifoxs_script_path: str,
-                 add_hydrogens_script_path: str, kgs_k: int = 1):
+                 add_hydrogens_script_path: str, kgs_k: int = 100, top_k: int = 1):
         """
         constructor for scoper, sets all paths needed to run the pipeline
         :param pdb_path:
@@ -40,6 +40,7 @@ class SCOPER:
         self.__model_config_path = model_config_path
         self.__multifoxs_script_path = multifoxs_script_path
         self.__add_hydrogens_script_path = add_hydrogens_script_path
+        self.__top_k = top_k
 
     def run(self):
         """
@@ -54,7 +55,7 @@ class SCOPER:
         """
 
         top_k_pdbs, kgs_db = KGSRNA(self.__kgsrna_work_dir, self.__pdb_path, self.__kgs_k, self.__saxs_script_path,
-                                    self.__saxs_profile_path, self.__add_hydrogens_script_path).compute()
+                                    self.__saxs_profile_path, self.__add_hydrogens_script_path, self.__top_k).compute()
         for pdb_file, _ in top_k_pdbs:  # already sorted
             odir = os.path.join(os.getcwd(), self.__base_dir)
             fpath = os.path.join(os.getcwd(), os.path.join(os.getcwd(), os.path.join(kgs_db, pdb_file)))
@@ -64,6 +65,9 @@ class SCOPER:
                                                    multifoxs_script=self.__multifoxs_script_path)
             config['sax_path'] = self.__saxs_profile_path
             inference_pipeline.infer()
+
+            # delete features to save space.
+            inference_pipeline.cleanup()
 
 
 class KGSRNA:
