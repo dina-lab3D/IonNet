@@ -30,6 +30,6 @@ Molecule has:
 Sampling ...
 > New structure: newpdb_1.pdb .. RMSD to initial: 1.69 .. Null-space dimension: 716
 > New structure: newpdb_2.pdb .. RMSD to initial: 3.82 .. Null-space dimension: 716
-Took 2.69 seconds to generate 2 valid samples
+Took 2.78 seconds to generate 2 valid samples
 Jacobian and null space computation took 2.11 seconds
 Node selection took 0.24 seconds

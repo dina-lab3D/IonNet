@@ -11,6 +11,7 @@ import subprocess
 from inference.inferencePipeline import InferencePipeline
 import shutil
 from inference.inference_utils import find_chi_score
+from inference.inference_config import config
 
 class SCOPER:
 
@@ -56,6 +57,7 @@ class SCOPER:
             inference_pipeline = InferencePipeline(os.path.join(os.getcwd(), self.__base_dir), os.path.join(os.getcwd(), os.path.join(os.getcwd(), os.path.join(kgs_db, pdb_file))), self.__inference_type,
                                                    self.__model_path, self.__model_config_path,
                                                    foxs_script=self.__saxs_script_path, multifoxs_script=self.__multifoxs_script_path)
+            config['sax_path'] = self.saxs_profile_path
             inference_pipeline.infer()
 
         
