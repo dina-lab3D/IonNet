@@ -9,19 +9,22 @@ or bin: KGSRNA, foxs (IMP), multifoxs (IMP) and reduce
 """
 import os
 import subprocess
-from inference.inferencePipeline import InferencePipeline
 import shutil
+from inference.inferencePipeline import InferencePipeline
 from inference.inference_utils import find_chi_score
 from inference.inference_config import config
-
+from inference.multi_foxs import MultiFoxs
 
 class SCOPER:
+
     KGSRNA_DIR_NAME = "KGSRNA"
     SAXS_WORKDIR_DIR_NAME = "saxs_work_dir"
+    MULTIFOXS_DIR_NAME = "MultiFoXS"
 
     def __init__(self, pdb_path: str, saxs_profile_path: str, base_dir: str, inference_type: str
-                 , model_path: str, model_config_path: str, saxs_script_path: str, multifoxs_script_path: str,
-                 add_hydrogens_script_path: str, kgs_k: int = 100, top_k: int = 1):
+                 , model_path: str, model_config_path: str, saxs_script_path: str, multifoxs_combination_script_path: str,
+                 add_hydrogens_script_path: str, multifoxs_script_path: str,
+                 kgs_k: int = 100, top_k: int = 1, multifoxs_run: bool = False):
         """
         constructor for scoper, sets all paths needed to run the pipeline
         :param pdb_path:
@@ -38,9 +41,11 @@ class SCOPER:
         self.__inference_type = inference_type
         self.__model_path = model_path
         self.__model_config_path = model_config_path
-        self.__multifoxs_script_path = multifoxs_script_path
+        self.__multifoxs_combination_script_path = multifoxs_combination_script_path
         self.__add_hydrogens_script_path = add_hydrogens_script_path
         self.__top_k = top_k
+        self.__multifoxs_run = multifoxs_run
+        self.__multifoxs_script_path = multifoxs_script_path
 
     def run(self):
         """
@@ -54,20 +59,44 @@ class SCOPER:
         :return:
         """
 
+        odir = os.path.join(os.getcwd(), self.__base_dir)
         top_k_pdbs, kgs_db = KGSRNA(self.__kgsrna_work_dir, self.__pdb_path, self.__kgs_k, self.__saxs_script_path,
                                     self.__saxs_profile_path, self.__add_hydrogens_script_path, self.__top_k).compute()
         for pdb_file, _ in top_k_pdbs:  # already sorted
-            odir = os.path.join(os.getcwd(), self.__base_dir)
             fpath = os.path.join(os.getcwd(), os.path.join(os.getcwd(), os.path.join(kgs_db, pdb_file)))
             inference_pipeline = InferencePipeline(odir, fpath, self.__inference_type,
                                                    self.__model_path, self.__model_config_path,
                                                    foxs_script=self.__saxs_script_path,
-                                                   multifoxs_script=self.__multifoxs_script_path)
+                                                   multifoxs_script=self.__multifoxs_combination_script_path)
             config['sax_path'] = self.__saxs_profile_path
             inference_pipeline.infer()
 
             # delete features to save space.
             inference_pipeline.cleanup()
+        if self.__multifoxs_run:
+            self.__run_multifoxs(odir)
+        else:
+            print("Not running MultiFoXS due to user settings.")
+
+
+    def __run_multifoxs(self, odir):
+        """
+        Run multifoxs on the current directory
+        :param odir:
+        :return:
+        """
+        MINIMAL_STRUCTURES = 2
+        # Run MultiFoXS over the processed directories.
+        if self.__top_k < MINIMAL_STRUCTURES:
+            print(f"top k < {MINIMAL_STRUCTURES}. Not running MultiFoxs")
+            return
+        if not os.path.isdir(os.path.join(os.getcwd(), self.MULTIFOXS_DIR_NAME)):
+            os.mkdir(self.MULTIFOXS_DIR_NAME)
+        multifoxs = MultiFoxs([odir], self.MULTIFOXS_DIR_NAME, self.__saxs_profile_path, overwrite=True,
+                              foxs_script_path=self.__saxs_script_path,
+                              multifoxs_script_path=self.__multifoxs_script_path)
+        result = multifoxs.run()
+        print(f"MultiFoXS lowest score is {result}")
 
 
 class KGSRNA:
@@ -115,16 +144,20 @@ class KGSRNA:
         :return:
         """
         print("Adding hydrogens")
-        subprocess.run(f"{self.__addhydrogens_script_path} {self.__pdb_path}", shell=True, stdout=subprocess.DEVNULL,
-                       stderr=subprocess.DEVNULL)
+        subprocess.run(f"{self.__addhydrogens_script_path} {self.__pdb_path}", shell=True,
+                       stdout=subprocess.DEVNULL,
+                       stderr=subprocess.DEVNULL
+                       )
 
         # set up environment variables for RNAVIEW (must already be installed)
         my_env = os.environ.copy()
         my_env["RNAVIEW"] = f"{os.getcwd()}/scripts/scoper_scripts/RNAVIEW/"
 
         print("Running rnaview on input pdb")
-        subprocess.run(f"{self.__rnaview_path} {self.__pdb_path}.HB", shell=True, env=my_env, stdout=subprocess.DEVNULL,
-                       stderr=subprocess.DEVNULL)
+        subprocess.run(f"{self.__rnaview_path} {self.__pdb_path}.HB", shell=True, env=my_env,
+                       stdout=subprocess.DEVNULL,
+                       stderr=subprocess.DEVNULL
+                       )
         self.__kgsrna_clean_pdb()
         if not os.path.isdir(self.__kgsrna_work_dir):
             os.mkdir(self.__kgsrna_work_dir)
@@ -162,7 +195,10 @@ class KGSRNA:
         print(f"Running KGSRNA with {self.__kgs_k} samples, this may take a few minutes")
         subprocess.run(
             self.__kgsrna_script_path.format(self.__pdb_path, self.__pdb_path, self.__kgs_k, self.__pdb_workdir)
-            , shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            , shell=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL
+        )
 
     def calculate_foxs_scores(self):
         """

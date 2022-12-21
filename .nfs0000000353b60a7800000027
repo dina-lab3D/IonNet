@@ -1,0 +1,125 @@
+[33mcommit 506b815f697aea9346f70a72404b7a4b3fea4b5e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Thu Dec 22 01:47:48 2022 +0200
+
+    changed and added multifoxs to the pipeline
+
+[33mcommit 67b9899db9ef44a3b8f00bd2ed1e496879a5c2d7[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Tue Dec 20 00:32:38 2022 +0200
+
+    mgclassifier arguments added
+
+[33mcommit 9070bb0ede597c3ddb0ae8515029cb13b19cf60b[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Tue Dec 20 00:13:32 2022 +0200
+
+    final changes made for prints and adding kgs_k and top_k as program arguments to scoper
+
+[33mcommit 53c523b490246c4168633c63fe33aadf8e84c797[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Mon Dec 19 17:18:38 2022 +0200
+
+    changed around a few printouts to make the program a little more clean during runtime
+
+[33mcommit f8eeb2f8de66d1012b249fdc1b36c0c0598669f8[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Mon Dec 19 14:50:10 2022 +0200
+
+    config file must be changed before running inference pipeline
+
+[33mcommit a267262a905fe779d4216f344e9cb13da36b8ca4[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Mon Dec 19 14:08:00 2022 +0200
+
+    added a function to get the right output from foxs because the new IMP version can have issues
+
+[33mcommit 3d1bda3f029b6dd6dfa262fbc5bd49221257923c[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Mon Dec 19 13:46:41 2022 +0200
+
+    added a function to get the right output from foxs because the new IMP version can have issues
+
+[33mcommit caa203d1f9ba4bafbe7437ab9397956577385c06[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Wed Dec 14 12:44:53 2022 +0200
+
+    made changes to scoper so that we can add the add hydrogens as a parameter to the run. also adding tar versions of RNAview
+
+[33mcommit 299f86844e030beedfa1ab668f0c010b5994f811[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Tue Dec 13 17:36:14 2022 +0200
+
+    changed scoper_pipeline a bit and added kgsrna tar to see if it might work on the colab
+
+[33mcommit f2cad20e6c77bfd42b536a73050d2c1788c868a6[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Tue Dec 13 11:50:18 2022 +0200
+
+    small change in subprocess run so it works on the collab
+
+[33mcommit 03bdc71789e1349ea319b9a512e586740ec0d9a7[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Mon Dec 12 17:30:21 2022 +0200
+
+    added foxs scripts but doubt they will work
+
+[33mcommit 9c7125a55751e0b41e3047aae7e07fab3b85b784[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Mon Dec 12 16:24:32 2022 +0200
+
+    adding addhydrogens pearl script and rnaview tar
+
+[33mcommit 2dcb7cbdc3640f13fc37c1b5a27f1c4902b7ddab[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Sun Dec 11 22:46:50 2022 +0200
+
+    added scoper pipeline and changed mgclassifier to add the pipeline
+
+[33mcommit 4986fa252d8161224afc5cadabec8cc3ba9073f5[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Sun Oct 2 18:18:13 2022 +0300
+
+    changed paths for subprocess so that it will work both locally and in the colab
+
+[33mcommit 3dc31a7630d9b93867126eef603a217be1b19007[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Sun Oct 2 18:12:50 2022 +0300
+
+    interface.cc hard codded the path to chemlib, changed it to be relative
+
+[33mcommit 3300501fab409d1bc0099d6e35bc738b590f67e2[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Sun Oct 2 16:54:54 2022 +0300
+
+    finally have a statically compiled interface2grid
+
+[33mcommit 2451661cc42b7106d31e8c2d1e6e74d5f17fe334[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Wed Sep 21 17:06:28 2022 +0300
+
+    tried to compile the program dynamically and copied it here from MGClassifierV2. it works there
+
+[33mcommit b1f52637652bcd6969dfee73b6b023e61c143847[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Wed Sep 21 16:21:59 2022 +0300
+
+    added Interface_grid
+
+[33mcommit 4c668d4e5b3eec867054c13f889c57f7b0ce2414[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Wed Sep 21 16:20:22 2022 +0300
+
+    deleted Interfacegrid
+
+[33mcommit bbaca4914a15b6d99786a01b1290fcf0901a5eff[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Wed Sep 21 15:32:29 2022 +0300
+
+    was missing Interface_grid added it
+
+[33mcommit 44607a4cd433155da521fd08891b9f7567cdffe5[m
+Author: Edan Patt <punims@cs.huji.ac.il>
+Date:   Wed Sep 7 09:12:10 2022 +0300
+
+    first working production version

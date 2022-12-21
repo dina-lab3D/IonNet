@@ -141,11 +141,14 @@ def scoper(args):
     config_path = args.config_path
     multifoxs_script_path = args.multifoxs_script
     addhydrogens_script_path = args.addhydrogens_script
+    multifoxs_combination_script_path = args.multifoxs_combination_script
     top_k = args.top_k
+    multifoxs_run = args.multifoxs_run
 
     scoper = SCOPER(fpath, saxs_path, base_dir, inference_type,
                     model_path, config_path,
-                    saxs_script_path, multifoxs_script_path, addhydrogens_script_path, kgs_k, top_k)
+                    saxs_script_path, multifoxs_combination_script_path, addhydrogens_script_path, multifoxs_script_path,
+                    kgs_k, top_k, multifoxs_run)
     kwargs = scoper.run()
 
 
@@ -236,9 +239,11 @@ def main():
     scoper_parser.add_argument('-it', '--inference-type', type=str, required=True)
     scoper_parser.add_argument('-fs', '--foxs-script', type=str, required=True, default=False)
     scoper_parser.add_argument('-mfs', '--multifoxs-script', type=str, required=True, default=False)
+    scoper_parser.add_argument('-mfcs', '--multifoxs-combination-script', type=str, required=True, default=False)
     scoper_parser.add_argument('-ahs', '--addhydrogens-script', type=str, required=True, default=False)
     scoper_parser.add_argument('-kk', '--kgs-k', type=int, required=False, default=100)
     scoper_parser.add_argument('-tk', '--top-k', type=int, required=False, default=1)
+    scoper_parser.add_argument('-mfr', '--multifoxs-run', type=bool, required=False, default=False)
     scoper_parser.set_defaults(func=scoper)
 
     kfold_parser = action_parsers.add_parser('kfold')

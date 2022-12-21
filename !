@@ -1,12 +1,12 @@
 argMap[hbondMethod] = rnaview
-argMap[hbondFile] = /cs/labs/dina/punims/IonNet/scoper_test/input/1l8vmono.pdb.HB.out
-argMap[workingDirectory] = scoper_test/KGSRNA/1l8vmono.pdb/
+argMap[hbondFile] = /cs/labs/dina/punims/IonNet/scoper_test/input/479_RNAComposer.pdb.HB.out
+argMap[workingDirectory] = scoper_test/KGSRNA/479_RNAComposer.pdb/
 Sampling options:
-	--initial /cs/labs/dina/punims/IonNet/scoper_test/input/1l8vmono.pdb.HB
+	--initial /cs/labs/dina/punims/IonNet/scoper_test/input/479_RNAComposer.pdb.HB
 	--annotation 
 	--hbondMethod rnaview
-	--hbondFile /cs/labs/dina/punims/IonNet/scoper_test/input/1l8vmono.pdb.HB.out
-	--workingDirectory scoper_test/KGSRNA/1l8vmono.pdb/
+	--hbondFile /cs/labs/dina/punims/IonNet/scoper_test/input/479_RNAComposer.pdb.HB.out
+	--workingDirectory scoper_test/KGSRNA/479_RNAComposer.pdb/
 	--rigidbodiesFromFIRST false
 	--samples 30
 	--radius 20
@@ -21,12 +21,43 @@ Sampling options:
 	--rebuildAggression 0
 	--flexibleRibose 1
 	--seed 0
-ResidueAnnotations: 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110001111111111011110111111101111111111111111111111111111111111111100111110111111111111111011110001111011111011111110011111111111111110001111111111111111011001
+ResidueAnnotations: 111111111111111111110001100111111111111001111111111
 Molecule has:
-> 4106 atoms
+> 1595 atoms
 > 0 initial collisions
-> 36 hydrogen bonds
-> 1095 DOFs of which 896 are cycle-DOFs
+> 13 hydrogen bonds
+> 397 DOFs of which 321 are cycle-DOFs
 Sampling ...
-> New structure: newpdb_1.pdb .. RMSD to initial: 1.69 .. Null-space dimension: 716
-> New structure: newpdb_2.pdb .. RMSD to initial: 3.82 .. Null-space dimension: 716
+> New structure: newpdb_1.pdb .. RMSD to initial: 1.58 .. Null-space dimension: 256
+> New structure: newpdb_2.pdb .. RMSD to initial: 1.33 .. Null-space dimension: 256
+> New structure: newpdb_3.pdb .. RMSD to initial: 1.02 .. Null-space dimension: 256
+> New structure: newpdb_4.pdb .. RMSD to initial: 2.8 .. Null-space dimension: 256
+> New structure: newpdb_5.pdb .. RMSD to initial: 2.89 .. Null-space dimension: 256
+> New structure: newpdb_6.pdb .. RMSD to initial: 1.28 .. Null-space dimension: 256
+> New structure: newpdb_7.pdb .. RMSD to initial: 2 .. Null-space dimension: 256
+> New structure: newpdb_8.pdb .. RMSD to initial: 2.32 .. Null-space dimension: 256
+> New structure: newpdb_9.pdb .. RMSD to initial: 1.25 .. Null-space dimension: 256
+> New structure: newpdb_10.pdb .. RMSD to initial: 2.74 .. Null-space dimension: 256
+> New structure: newpdb_11.pdb .. RMSD to initial: 3.75 .. Null-space dimension: 256
+> New structure: newpdb_12.pdb .. RMSD to initial: 2.96 .. Null-space dimension: 256
+> New structure: newpdb_13.pdb .. RMSD to initial: 2.89 .. Null-space dimension: 256
+> New structure: newpdb_14.pdb .. RMSD to initial: 0.766 .. Null-space dimension: 256
+> New structure: newpdb_15.pdb .. RMSD to initial: 1.79 .. Null-space dimension: 256
+> New structure: newpdb_16.pdb .. RMSD to initial: 2.48 .. Null-space dimension: 256
+> New structure: newpdb_17.pdb .. RMSD to initial: 0.922 .. Null-space dimension: 256
+> New structure: newpdb_18.pdb .. RMSD to initial: 1.18 .. Null-space dimension: 256
+> New structure: newpdb_19.pdb .. RMSD to initial: 3.88 .. Null-space dimension: 256
+> New structure: newpdb_20.pdb .. RMSD to initial: 2.17 .. Null-space dimension: 256
+> New structure: newpdb_21.pdb .. RMSD to initial: 2.62 .. Null-space dimension: 256
+> New structure: newpdb_22.pdb .. RMSD to initial: 2.4 .. Null-space dimension: 256
+> New structure: newpdb_23.pdb .. RMSD to initial: 2.59 .. Null-space dimension: 256
+> New structure: newpdb_24.pdb .. RMSD to initial: 2.83 .. Null-space dimension: 256
+> New structure: newpdb_25.pdb .. RMSD to initial: 3.29 .. Null-space dimension: 256
+> New structure: newpdb_26.pdb .. RMSD to initial: 4.18 .. Null-space dimension: 256
+> New structure: newpdb_27.pdb .. RMSD to initial: 2.83 .. Null-space dimension: 256
+> New structure: newpdb_28.pdb .. RMSD to initial: 2.71 .. Null-space dimension: 256
+> New structure: newpdb_29.pdb .. RMSD to initial: 3.46 .. Null-space dimension: 256
+> New structure: newpdb_30.pdb .. RMSD to initial: 2.44 .. Null-space dimension: 256
+Took 2.95 seconds to generate 30 valid samples
+Jacobian and null space computation took 2.06 seconds
+Node selection took 0.148 seconds
