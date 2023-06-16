@@ -222,6 +222,7 @@ class InferencePresenter:
     def __init__(self, inference_type: str, pymol: bool, fpath: str):
         self.inference_type = inference_type
         self.inference_types = ['top', 'sax', 'cluster', 'random']
+        print(f'inference type is {self.inference_type}')
         self.fpath = fpath
         if self.inference_type not in self.inference_types:
             raise Exception(f"{self.inference_type} not a valid inference type, try again")
