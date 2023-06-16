@@ -364,6 +364,7 @@ class Top:
 
     def __get_candidates(self):
         candidates = []
+        print(f"Predicting with a threshold value of {config['positive_thresh']}")
         labels = self.predictions > config['positive_thresh']
         confidence_list_positive = [x[0] for x in zip(self.predictions, labels) if x[1] == 1]
         index_list = list(range(len(labels)))
